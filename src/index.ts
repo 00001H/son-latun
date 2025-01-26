@@ -14,7 +14,7 @@ function generate_kalama(prng: SFC32,cc: number){
     let VOWSET: Array<string>;
     do{
         if(s.length > 0 || prng.rand()<0.5){
-            c = prng.choice(NASAL ? SAFECONS : CONS);
+            c = prng.choice(nasal ? SAFECONS : CONS);
             s += c;
             if(c === "w"){
                 VOWSET = WVOW;
