@@ -38,6 +38,7 @@ addEventListener("load",()=>{
     const seedbox = document.getElementById("seedbox") as HTMLInputElement;
     const wcontp = document.getElementById("wcontp") as HTMLInputElement;
     const wcontpd = document.getElementById("wcontpd") as HTMLSpanElement;
+    const wexpl = document.getElementById("wexpl") as HTMLSpanElement;
     const relexin = document.getElementById("relex-input") as HTMLTextAreaElement;
     const relexout = document.getElementById("relex-output") as HTMLPreElement;
     let mapping = new Map<string,string>();
@@ -78,7 +79,15 @@ addEventListener("load",()=>{
     seedbox.addEventListener("input",update);
     relexin.addEventListener("input",update);
     wcontp.addEventListener("input",update);
-    wcontp.addEventListener("input",() => {wcontpd.textContent = wcontp.value;});
+    wcontp.addEventListener("input",() => {
+        wcontpd.textContent = wcontp.value;
+        const x = wcontp.valueAsNumber/100;
+        wexpl.textContent = (1/(1-x)).toFixed(2);
+    });
     wcontpd.textContent = wcontp.value;
+    {
+        const x = wcontp.valueAsNumber/100;
+        wexpl.textContent = (1/(1-x)).toFixed(2);
+    }
     update();
 });
