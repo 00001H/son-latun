@@ -40,7 +40,7 @@ addEventListener("load",()=>{
     const wcontpd = document.getElementById("wcontpd") as HTMLSpanElement;
     const wexpl = document.getElementById("wexpl") as HTMLSpanElement;
     const relexin = document.getElementById("relex-input") as HTMLTextAreaElement;
-    const relexout = document.getElementById("relex-output") as HTMLPreElement;
+    const relexout = document.getElementById("relex-output") as HTMLParagraphElement;
     let mapping = new Map<string,string>();
     const reverse = new URLSearchParams(location.search).has("unoreversecard");
     function regenerate(){
